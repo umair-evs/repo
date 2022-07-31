@@ -30,7 +30,7 @@ $responce = makeApiGETCall($endPoint, $data = false);
 			  redirect: 'follow'
 			};
 
-			fetch("http://localhost/to-do/api/remove-task.php", requestOptions)
+			fetch("http://localhost/api/remove-task.php", requestOptions)
 			  .then((response) => {
 			  	response.text()
 				window.location.href="index.php?msg=Record Deleted";

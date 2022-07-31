@@ -2,7 +2,7 @@
 include_once("./functions.php");
 if(isset($_POST) && !empty($_POST["id"])){
 	extract($_POST);
-	$endPoint = "http://localhost/to-do/api/update-task.php";
+	$endPoint = "http://localhost/api/update-task.php";
 	$response = makeApiPOSTCall($endPoint, json_encode($_POST));
 	if($response->success==1){
 		header("location:index.php"."?msg=".$response->message); exit;
@@ -10,7 +10,7 @@ if(isset($_POST) && !empty($_POST["id"])){
 }
 
 	$arrayName = array('id' => $_GET['id']);
-	$endPoint = "http://localhost/to-do/api/get-task.php";
+	$endPoint = "http://localhost/api/get-task.php";
 	$resp = makeApiGETCall($endPoint, json_encode($arrayName));
 	$id = $resp->data->id;
 	$title = $resp->data->title;
